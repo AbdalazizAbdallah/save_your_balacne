@@ -1,8 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 import 'package:save_your_balance/model/source_data.dart';
 
 import '../widgets/card_type.dart';
@@ -63,8 +60,7 @@ class SecondPage extends StatelessWidget {
           ],
         )),
       ),
-      body: Container(
-        // color: Colors.red,
+      body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -88,6 +84,7 @@ class SecondPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              dense: true,
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,
                 color: Colors.grey.shade400,
@@ -114,7 +111,8 @@ class SecondPage extends StatelessWidget {
                 itemBuilder: (context, int index) {
                   return CardType(
                     cardclass: SourceData.listOfCardClass[index],
-                    myColor: index%2==0 ? Color(0xff1d2025) : Color(0xFFf0b18e),
+                    myColor:
+                        index % 2 == 0 ? Color(0xff1d2025) : Color(0xFFf0b18e),
                   );
                 },
                 separatorBuilder: (BuildContext context, int index) {
@@ -125,6 +123,7 @@ class SecondPage extends StatelessWidget {
               ),
             ),
             ListTile(
+              dense: true,
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,
                 color: Colors.grey.shade400,
@@ -140,6 +139,24 @@ class SecondPage extends StatelessWidget {
               onTap: () {
                 print('Super ATM');
               },
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              child: SizedBox(
+                height: 180,
+                width: double.infinity,
+                child: Card(
+                  elevation: 1,
+                  clipBehavior: Clip.hardEdge,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: FittedBox(
+                    fit: BoxFit.cover,
+                    child: Image.asset('assets/images/map.png'),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

@@ -6,8 +6,6 @@ import 'package:intl/intl.dart';
 import 'package:save_your_balance/model/card.dart';
 
 class CardType extends StatelessWidget {
-  
-
   const CardType({
     Key? key,
     required this.cardclass,
@@ -19,6 +17,9 @@ class CardType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
       color: myColor,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
