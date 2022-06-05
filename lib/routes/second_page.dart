@@ -1,7 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:save_your_balance/model/source_data.dart';
+import 'dart:ui';
 
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
+import 'package:save_your_balance/model/source_data.dart';
+import 'package:save_your_balance/routes/third_page.dart';
+
+import '../widgets/appbar.dart';
 import '../widgets/card_type.dart';
 import '../widgets/payment_type.dart';
 
@@ -12,54 +18,7 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        actions: <Widget>[
-          Container(
-            height: 10,
-            margin: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              border: Border.fromBorderSide(
-                BorderSide(
-                  color: Colors.grey.shade300,
-                  style: BorderStyle.solid,
-                  width: 0.5,
-                ),
-              ),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.black,
-              ),
-            ),
-          )
-        ],
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        shape: Border(
-            bottom: BorderSide(
-          style: BorderStyle.solid,
-          color: Colors.grey.shade300,
-          width: 1,
-        )),
-        toolbarHeight: 80,
-        title: RichText(
-            text: TextSpan(
-          style: GoogleFonts.roboto(
-            color: Colors.black,
-            fontSize: 18,
-          ),
-          children: const <TextSpan>[
-            TextSpan(text: 'Hi,'),
-            TextSpan(
-                text: ' Abdalaziz !',
-                style: TextStyle(fontWeight: FontWeight.bold)),
-          ],
-        )),
-      ),
+      appBar: const MyAppBar(mainWord: 'Abdalaziz !', greeting: 'Hi, '),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -84,7 +43,6 @@ class SecondPage extends StatelessWidget {
               ),
             ),
             ListTile(
-              dense: true,
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,
                 color: Colors.grey.shade400,
@@ -98,7 +56,9 @@ class SecondPage extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                print('Super Card');
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return const ThirdPage();
+                }));
               },
             ),
             SizedBox(
@@ -123,7 +83,6 @@ class SecondPage extends StatelessWidget {
               ),
             ),
             ListTile(
-              dense: true,
               trailing: Icon(
                 Icons.arrow_forward_ios_outlined,
                 color: Colors.grey.shade400,
@@ -164,3 +123,4 @@ class SecondPage extends StatelessWidget {
     );
   }
 }
+
