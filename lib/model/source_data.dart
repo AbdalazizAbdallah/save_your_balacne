@@ -1,6 +1,8 @@
 
 
-import 'package:save_your_balance/model/payment.dart';
+import 'payment.dart';
+
+import 'card.dart';
 
 class SourceData{
 
@@ -15,4 +17,12 @@ class SourceData{
     PaymentClass(imagePath: 'assets/images/amzon.png' , text: 'Amazon Shop', balance: 285.62),
   ];
 
+  static List<CardClass> listOfCardClass = <CardClass>[
+    CardClass(imagePath: 'assets/images/visa.png', balance: 1260.88, cardNumber: '1234412369877569', verified: true),
+    CardClass(imagePath: 'assets/images/mastercard_32.png', balance: 1260.88, cardNumber: '1234412369877569', verified: false),
+    CardClass(imagePath: 'assets/images/visa.png', balance: 1260.88, cardNumber: '1234412369877569', verified: true),
+    CardClass(imagePath: 'assets/images/mastercard_32.png', balance: 1260.88, cardNumber: '1234412369877569', verified: false),
+    CardClass(imagePath: 'assets/images/visa.png', balance: 1260.88, cardNumber: '1234412369877569', verified: true),
+    CardClass(imagePath: 'assets/images/mastercard_32.png', balance: 1260.88, cardNumber: '1234412369877569', verified: false),
+  ];
 }

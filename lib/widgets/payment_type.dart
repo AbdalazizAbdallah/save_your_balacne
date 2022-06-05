@@ -16,13 +16,13 @@ class PaymentType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(15),
       constraints: const BoxConstraints(
-        minWidth: 220,
-        minHeight: 150,
+        minWidth: 200,
+        minHeight: 130,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(15),
         color: const Color(0xFFf9f9f9),
       ),
       child: Column(
@@ -30,12 +30,12 @@ class PaymentType extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           CircleAvatar(
-            radius: 20,
+            radius: 15,
             backgroundColor: Colors.white,
             child: Image.asset(paymentClass.imagePath),
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           Text(
             paymentClass.text,
