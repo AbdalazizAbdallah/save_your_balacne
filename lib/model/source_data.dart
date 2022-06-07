@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import 'payment.dart';
 
 import 'card.dart';
@@ -76,34 +78,49 @@ class SourceData {
 
   static List<CardClass> listOfCardClass = <CardClass>[
     CardClass(
-        imagePath: 'assets/images/visa.png',
-        balance: 1260.88,
-        cardNumber: '1234412369877569',
-        verified: true),
+      imagePath: 'assets/images/visa.png',
+      balance: 1260.88,
+      cardNumber: '1234412369877569',
+      verified: true,
+      expiredDate: '08/28',
+    ),
     CardClass(
-        imagePath: 'assets/images/mastercard_32.png',
-        balance: 1260.88,
-        cardNumber: '1234412369877569',
-        verified: false),
+      imagePath: 'assets/images/mastercard_32.png',
+      balance: 1260.88,
+      cardNumber: '1234412369877569',
+      verified: false,
+      expiredDate: '04/24',
+      myColor: const Color(0xFFf0b18e),
+    ),
     CardClass(
-        imagePath: 'assets/images/visa.png',
-        balance: 1260.88,
-        cardNumber: '1234412369877569',
-        verified: true),
+      imagePath: 'assets/images/visa.png',
+      balance: 1260.88,
+      cardNumber: '1234412369877569',
+      verified: true,
+      expiredDate: '01/30',
+      myColor: const Color(0xFFf0b18e),
+    ),
     CardClass(
-        imagePath: 'assets/images/mastercard_32.png',
-        balance: 1260.88,
-        cardNumber: '1234412369877569',
-        verified: false),
+      imagePath: 'assets/images/mastercard_32.png',
+      balance: 1260.88,
+      cardNumber: '1234412369877569',
+      verified: false,
+      expiredDate: '12/22',
+    ),
     CardClass(
-        imagePath: 'assets/images/visa.png',
-        balance: 1260.88,
-        cardNumber: '1234412369877569',
-        verified: true),
+      imagePath: 'assets/images/visa.png',
+      balance: 1260.88,
+      cardNumber: '1234412369877569',
+      verified: true,
+      expiredDate: '11/25',
+    ),
     CardClass(
-        imagePath: 'assets/images/mastercard_32.png',
-        balance: 1260.88,
-        cardNumber: '1234412369877569',
-        verified: false),
+      imagePath: 'assets/images/mastercard_32.png',
+      balance: 1260.88,
+      cardNumber: '1234412369877569',
+      verified: false,
+      expiredDate: '06/27',
+      myColor: const Color(0xFFf0b18e),
+    ),
   ];
 }

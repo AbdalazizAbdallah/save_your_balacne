@@ -53,7 +53,7 @@ class CardType extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    '08/28',
+                    cardclass.expiredDate,
                     style: GoogleFonts.roboto(
                       color: Colors.grey,
                     ),

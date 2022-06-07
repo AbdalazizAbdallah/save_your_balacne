@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:save_your_balance/routes/second_page.dart';
+import 'package:save_your_balance/routes/main_page.dart';
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({
+class StartedPage extends StatelessWidget {
+  const StartedPage({
     Key? key,
   }) : super(key: key);
 
@@ -109,7 +109,7 @@ class FirstPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) {
-                          return const SecondPage();
+                          return const MainPage();
                         }),
                       );
                     },

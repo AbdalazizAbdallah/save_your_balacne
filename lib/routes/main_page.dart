@@ -1,18 +1,15 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 import 'package:save_your_balance/model/source_data.dart';
-import 'package:save_your_balance/routes/third_page.dart';
+import 'package:save_your_balance/routes/super_card.dart';
 
 import '../widgets/appbar.dart';
 import '../widgets/card_type.dart';
 import '../widgets/payment_type.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({Key? key}) : super(key: key);
+class MainPage extends StatelessWidget {
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +54,7 @@ class SecondPage extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return const ThirdPage();
+                  return const SuperCardPage();
                 }));
               },
             ),
@@ -71,8 +68,7 @@ class SecondPage extends StatelessWidget {
                 itemBuilder: (context, int index) {
                   return CardType(
                     cardclass: SourceData.listOfCardClass[index],
-                    myColor:
-                        index % 2 == 0 ? Color(0xff1d2025) : Color(0xFFf0b18e),
+                    myColor: SourceData.listOfCardClass[index].myColor,
                   );
                 },
                 separatorBuilder: (BuildContext context, int index) {

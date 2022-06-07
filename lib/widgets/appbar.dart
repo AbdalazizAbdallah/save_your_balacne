@@ -2,40 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const MyAppBar({Key? key, required this.mainWord, this.greeting})
+  const MyAppBar(
+      {Key? key,
+      required this.mainWord,
+      this.greeting,
+      this.visibleBackButton,
+      this.hideDrawerButon})
       : super(key: key);
 
   final String? greeting;
   final String mainWord;
+  final bool? visibleBackButton;
+  final bool? hideDrawerButon;
+
   @override
   Size get preferredSize => const Size.fromHeight(80);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      automaticallyImplyLeading: false,
+      iconTheme: const IconThemeData(
+        color: Colors.black, //change your color here
+      ),
+      automaticallyImplyLeading: visibleBackButton ?? false,
       actions: <Widget>[
-        Container(
-          height: 10,
-          margin: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            border: Border.fromBorderSide(
-              BorderSide(
-                color: Colors.grey.shade300,
-                style: BorderStyle.solid,
-                width: 0.5,
-              ),
-            ),
-            borderRadius: BorderRadius.circular(5),
-          ),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.black,
-            ),
-          ),
-        )
+        hideDrawerButon ?? false
+            ? const SizedBox()
+            : Container(
+                height: 10,
+                margin: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  border: Border.fromBorderSide(
+                    BorderSide(
+                      color: Colors.grey.shade300,
+                      style: BorderStyle.solid,
+                      width: 0.5,
+                    ),
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.menu,
+                    color: Colors.black,
+                  ),
+                ),
+              )
       ],
       backgroundColor: Colors.transparent,
       elevation: 0,

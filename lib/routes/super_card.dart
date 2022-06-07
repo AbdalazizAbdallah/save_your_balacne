@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:save_your_balance/routes/add_card.dart';
 import 'package:save_your_balance/widgets/appbar.dart';
 
 import '../model/source_data.dart';
 import '../widgets/card_type.dart';
 
-class ThirdPage extends StatelessWidget {
-  const ThirdPage({Key? key}) : super(key: key);
+class SuperCardPage extends StatefulWidget {
+  const SuperCardPage({Key? key}) : super(key: key);
 
+  @override
+  State<SuperCardPage> createState() => _SuperCardPageState();
+}
+
+class _SuperCardPageState extends State<SuperCardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +31,7 @@ class ThirdPage extends StatelessWidget {
               itemBuilder: (context, int index) {
                 return CardType(
                   cardclass: SourceData.listOfCardClass[index],
-                  myColor:
-                      index % 2 == 0 ? Color(0xff1d2025) : Color(0xFFf0b18e),
+                  myColor: SourceData.listOfCardClass[index].myColor,
                 );
               },
               separatorBuilder: (BuildContext context, int index) {
@@ -40,12 +45,16 @@ class ThirdPage extends StatelessWidget {
             margin: const EdgeInsets.fromLTRB(20, 20, 20, 40),
             child: OutlinedButton.icon(
               style: OutlinedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 60),
+                  minimumSize: const Size(double.infinity, 60),
                   primary: Colors.black,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   )),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const AddCardPage();
+                }));
+              },
               icon: const Icon(Icons.add),
               label: const Text('Add Card'),
             ),
