@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:save_your_balance/helper/my_colors.dart';
 import 'package:save_your_balance/model/card.dart';
 
 class CardType extends StatelessWidget {
@@ -47,8 +48,8 @@ class CardType extends StatelessWidget {
                         ),
                       ),
                       cardclass.verified
-                          ? const Icon(Icons.check_circle,
-                              color: Color(0xFFa8a9ea), size: 15)
+                          ?  Icon(Icons.check_circle,
+                              color: MyColor.myLightPuprle, size: 15)
                           : const SizedBox(),
                     ],
                   ),

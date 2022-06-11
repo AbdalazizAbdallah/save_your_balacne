@@ -44,12 +44,6 @@ class _SuperCardPageState extends State<SuperCardPage> {
           Container(
             margin: const EdgeInsets.fromLTRB(20, 20, 20, 40),
             child: OutlinedButton.icon(
-              style: OutlinedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 60),
-                  primary: Colors.black,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  )),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return const AddCardPage();

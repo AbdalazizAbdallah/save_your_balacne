@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:save_your_balance/helper/themes.dart';
 
 import 'started_page.dart';
 
@@ -7,9 +8,11 @@ class SplachScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+  
+    return MaterialApp(
+      theme: MyTheme.lightDate,
       debugShowCheckedModeBanner: false,
-      home: StartedPage(),
+      home: const StartedPage(),
     );
   }
 }

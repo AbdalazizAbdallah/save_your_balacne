@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:save_your_balance/helper/my_colors.dart';
+import 'package:save_your_balance/routes/login_page.dart';
 import 'package:save_your_balance/routes/main_page.dart';
 
 class StartedPage extends StatelessWidget {
@@ -14,7 +16,7 @@ class StartedPage extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: const BoxDecoration(color: Color(0xFF1d2025)),
+          decoration:  BoxDecoration(color: MyColor.myBlack),
           child: Stack(
             fit: StackFit.expand,
             children: [
@@ -45,7 +47,7 @@ class StartedPage extends StatelessWidget {
                     child: Text('Save your \n balance',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.questrial(
-                          color: const Color(0xFFfbfcfe),
+                          color: Colors.white,
                           fontSize: 40,
                           height: 1.3,
                           fontWeight: FontWeight.bold,
@@ -64,7 +66,7 @@ class StartedPage extends StatelessWidget {
                         'Best solution to save your\nbalance & transactions',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.roboto(
-                          color: const Color(0xFFeaeef1),
+                          color: Colors.white,
                           fontSize: 16,
                           height: 1.3,
                         )),
@@ -73,26 +75,26 @@ class StartedPage extends StatelessWidget {
                     padding: const EdgeInsets.all(25),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
-                      children: const <Widget>[
-                        Padding(
+                      children: <Widget>[
+                        const Padding(
                           padding: EdgeInsets.all(10),
                           child: CircleAvatar(
                             radius: 3,
-                            backgroundColor: Color(0xFFf8fcff),
+                            backgroundColor: Colors.white,
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           child: CircleAvatar(
                             radius: 3,
-                            backgroundColor: Color(0xFF676b6e),
+                            backgroundColor: MyColor.myGrey,
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(10),
+                         Padding(
+                          padding: const EdgeInsets.all(10),
                           child: CircleAvatar(
                             radius: 3,
-                            backgroundColor: Color(0xFF676b6e),
+                            backgroundColor: MyColor.myGrey,
                           ),
                         ),
                       ],
@@ -103,13 +105,18 @@ class StartedPage extends StatelessWidget {
                       minimumSize: const Size(220, 50),
                       primary: const Color(0xfff0b18e), // background
                       onPrimary: Colors.black, // foreground
-                      padding: const EdgeInsets.all(15),
                     ),
                     onPressed: () {
-                      Navigator.push(
+                      /*Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) {
                           return const MainPage();
+                        }),
+                      );*/
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return const LoginPage();
                         }),
                       );
                     },
@@ -128,3 +135,5 @@ class StartedPage extends StatelessWidget {
     );
   }
 }
+
+

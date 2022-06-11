@@ -21,9 +21,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      iconTheme: const IconThemeData(
-        color: Colors.black, //change your color here
-      ),
+     
       automaticallyImplyLeading: visibleBackButton ?? false,
       actions: <Widget>[
         hideDrawerButon ?? false
@@ -50,15 +48,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               )
       ],
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      shape: Border(
-          bottom: BorderSide(
-        style: BorderStyle.solid,
-        color: Colors.grey.shade300,
-        width: 1,
-      )),
-      toolbarHeight: 80,
       title: RichText(
           text: TextSpan(
         style: GoogleFonts.roboto(

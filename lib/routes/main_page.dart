@@ -49,7 +49,7 @@ class MainPage extends StatelessWidget {
                 'Super Card',
                 style: GoogleFonts.roboto(
                   fontSize: 18,
-                  fontWeight: FontWeight.w300,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
               onTap: () {
@@ -88,11 +88,11 @@ class MainPage extends StatelessWidget {
                 'Super ATM',
                 style: GoogleFonts.roboto(
                   fontSize: 18,
-                  fontWeight: FontWeight.w300,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
               onTap: () {
-                print('Super ATM');
+                debugPrint('Super ATM');
               },
             ),
             Padding(
