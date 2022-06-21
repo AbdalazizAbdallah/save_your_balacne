@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:save_your_balance/model/source_data.dart';
+import 'package:save_your_balance/routes.dart';
 import 'package:save_your_balance/routes/super_card.dart';
 
 import '../widgets/appbar.dart';
@@ -53,9 +53,10 @@ class MainPage extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return const SuperCardPage();
-                }));
+                Navigator.pushNamed(
+                  context,
+                  RouteGenerator.superCardPage,
+                );
               },
             ),
             SizedBox(
@@ -119,4 +120,3 @@ class MainPage extends StatelessWidget {
     );
   }
 }
-

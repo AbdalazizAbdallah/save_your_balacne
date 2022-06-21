@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:save_your_balance/helper/my_colors.dart';
+import 'package:save_your_balance/routes.dart';
 import 'package:save_your_balance/routes/login_page.dart';
 import 'package:save_your_balance/routes/main_page.dart';
 
@@ -107,17 +108,10 @@ class StartedPage extends StatelessWidget {
                       onPrimary: Colors.black, // foreground
                     ),
                     onPressed: () {
-                      /*Navigator.push(
+
+                      Navigator.pushReplacementNamed(
                         context,
-                        MaterialPageRoute(builder: (context) {
-                          return const MainPage();
-                        }),
-                      );*/
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) {
-                          return const LoginPage();
-                        }),
+                        RouteGenerator.loginPage,
                       );
                     },
                     child: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:save_your_balance/routes.dart';
 import 'package:save_your_balance/routes/add_card.dart';
 import 'package:save_your_balance/widgets/appbar.dart';
 
@@ -45,9 +46,7 @@ class _SuperCardPageState extends State<SuperCardPage> {
             margin: const EdgeInsets.fromLTRB(20, 20, 20, 40),
             child: OutlinedButton.icon(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const AddCardPage();
-                }));
+                Navigator.pushNamed(context, RouteGenerator.addCardPage);
               },
               icon: const Icon(Icons.add),
               label: const Text('Add Card'),

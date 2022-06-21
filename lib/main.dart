@@ -1,16 +1,24 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:save_your_balance/routes.dart';
 
-import 'routes/splach_screen.dart';
+import 'helper/themes.dart';
+
 
 void main(List<String> args) {
-  runApp(const MainPage());
+  runApp(const Main());
 }
 
-class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
+class Main extends StatelessWidget {
+  const Main({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const SplachScreen();
+    return MaterialApp(
+      theme: MyTheme.lightDate,
+      debugShowCheckedModeBanner: false,
+      initialRoute: RouteGenerator.homePage,
+      onGenerateRoute: RouteGenerator.generateRoute,
+    );
   }
 }

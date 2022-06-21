@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:save_your_balance/helper/my_colors.dart';
+import 'package:save_your_balance/routes.dart';
 import 'package:save_your_balance/routes/create_account.dart';
 
 import 'main_page.dart';
@@ -101,13 +102,11 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(content: Text('login successfully')),
+                              const SnackBar(
+                                  content: Text('login successfully')),
                             );
-                             Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const MainPage()));
+                            Navigator.pushNamed(
+                                context, RouteGenerator.mainPage);
                           }
                         },
                         child: Text('login'.toUpperCase()),
@@ -123,11 +122,8 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             TextButton(
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const CreateAccountPage()));
+                                Navigator.pushNamed(
+                                    context, RouteGenerator.createAccountPage);
                               },
                               child: const Text(
                                 'Create a new account',
